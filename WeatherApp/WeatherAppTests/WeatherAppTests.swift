@@ -20,7 +20,7 @@ class WeatherAppTests: XCTestCase {
   }
   
   func testGetLocationName() {
-    let zipcode = "10023"
+    let zipcode = "10455"
     let exp = expectation(description: "found location name")
     ZipCodeHelper.getLocationName(from: zipcode) { (error, localityName) in
       if let error = error {
