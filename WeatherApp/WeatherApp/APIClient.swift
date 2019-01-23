@@ -34,7 +34,7 @@ final class WeatherAPIClient {
                     let weatherData = try JSONDecoder().decode(WeatherData.self, from: data).response[0].periods
                     completionHandler(nil, weatherData)
                 } catch {
-                    completionHandler(AppError.jsonDecodingError(error), nil)
+                    completionHandler(AppError.decodingError(error), nil)
                 }
             }
             }.resume()
