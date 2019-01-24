@@ -10,6 +10,7 @@ import UIKit
 
 class DetailedViewController: UIViewController {
     
+    @IBOutlet weak var cityLabel: UILabel!
     
     @IBOutlet weak var cityImage: UIImageView!
     
@@ -61,14 +62,14 @@ class DetailedViewController: UIViewController {
     
     private func updateUI() {
         if let dayInfo = dayInfo {
-            
-            tempDescription.text = dayInfo.validTime
-            highTemp.text = "highTemp: \(dayInfo.maxTempF)"
-            lowTemp.text = "lowTemp: \(dayInfo.minTempF)"
-            sunriseLabel.text = "sunrise: \(dayInfo.sunrise)"
-            sunsetLabel.text = "sunset: \(dayInfo.sunset)"
-            windSpeed.text = "windSpeed: \(dayInfo.widSpeedMaxMPH)"
-            precipIN.text = "precipIn: \(dayInfo.precipIn)"
+            cityLabel.text = cityName
+            tempDescription.text = dayInfo.weather
+            highTemp.text = "highTemp: \(dayInfo.maxTempF) °F"
+            lowTemp.text = "lowTemp: \(dayInfo.minTempF) °F"
+            sunriseLabel.text = "sunrise: \(dayInfo.sunsetISO)"
+            sunsetLabel.text = "sunset: \(dayInfo.sunsetISO)"
+            windSpeed.text = "windSpeedMaxMPH: \(dayInfo.windSpeedMaxMPH) MPH"
+            precipIN.text = "precipIn: \(dayInfo.precipIN) in."
         }
     }
     

@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        view.backgroundColor = .white
         weatherCV.dataSource = self
         weatherCV.delegate = self
         searchButton.delegate = self
@@ -75,8 +76,8 @@ extension ViewController: UICollectionViewDataSource {
         forecastCity.text = "Weather forecast for \(cityName)"
         cell.dateLabel.text = "\(day.validTime)"
         cell.iconImage.image = UIImage(named: day.icon)
-        cell.highTempLabel.text = "High:\(day.maxTempF) F"
-        cell.lowTempLabel.text = "Low:\(day.minTempF) F"
+        cell.highTempLabel.text = "High:\(day.maxTempF)° F"
+        cell.lowTempLabel.text = "Low:\(day.minTempF)° F"
         return cell
     }
 }

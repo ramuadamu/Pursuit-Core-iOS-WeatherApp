@@ -25,6 +25,6 @@ struct PeriodsData: Codable {
     let sunrise: Int
     let sunset: Double
     let sunsetISO: String
-    let widSpeedMaxMPH: Int?
-    let precipIn: Int?
+    let windSpeedMaxMPH: Int
+    let precipIN: Double
 }
